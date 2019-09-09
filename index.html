@@ -1,2 +1,31 @@
 <!DOCTYPE html>
-<head>test</head>
+<html>
+<head>
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react@16.9.0/umd/react.development.js" ></script>
+    <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js" ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
+
+</head>
+<body>
+    <script type="text/babel">
+    function Welcome(props) {
+        return <div><h1>Hello {props.name}</h1></div>;
+    }
+    function App() {
+        return (
+            <div>
+            <Welcome name="Kukku" />
+            <Welcome name="Dab" />
+            </div>
+
+        );
+    }
+    ReactDOM.render(
+        <App/>,
+        document.getElementById("demo")
+        
+    );
+</script>
+</body>
+</html>
