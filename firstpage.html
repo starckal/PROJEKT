@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello React</title>
+        <script src="https://unpkg.com/react@16.9.0/umd/react.development.js" ></script>
+        <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js" ></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
+        <link rel="stylesheet" href="styleFirstPage.css">
+    </head>
+    
+    <body>
+        <div id="bachelor">Bachelor</div>
+
+        <script type="text/babel">
+            function Bachelor(props){                //Komponenten welcome äter props och returnerar element
+                return <div ><a id="reactDiv" href={props.link}>Bachelor</a></div>;
+            }
+
+            function Master (props){                //Komponenten welcome äter props och returnerar element
+                return <div ><a id="reactDiv" href={props.link}>Master</a></div>;
+            }
+
+            ReactDOM.render(                    // ReactDOM är virtuell, render metoden skapar "riktiga" DOM
+            <div id="divven">
+            <ul>
+           <li> <Master link="https://www.w3schools.com/html/"/> </li>
+           <li> <Bachelor link="https://google.com"/></li>
+            </ul>
+            </div>,
+            
+                document.getElementById("bachelor") // en div som heter root är typiskt react
+            );
+
+
+
+            
+          
+        </script>
+    </body>
+</html>
