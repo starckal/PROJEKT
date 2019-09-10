@@ -13,19 +13,21 @@
 
         <script type="text/babel">
             function Bachelor(props){                //Komponenten welcome äter props och returnerar element
-                return <div ><a id="reactDiv" href={props.link}>Bachelor</a></div>;
+                return <div ><a id="reactDiv" href={props.link}>BACHELOR</a></div>;
             }
 
             function Master (props){                //Komponenten welcome äter props och returnerar element
-                return <div ><a id="reactDiv" href={props.link}>Master</a></div>;
+                return <div ><a id="reactDiv" href={props.link}>MASTER</a></div>;
             }
 
             ReactDOM.render(                    // ReactDOM är virtuell, render metoden skapar "riktiga" DOM
             <div id="divven">
+
             <ul>
-           <li> <Master link="https://www.w3schools.com/html/"/> </li>
-           <li> <Bachelor link="https://google.com"/></li>
+                <li> <Master link="index.html"/> </li>
+                <li> <Bachelor link="index.html"/></li>
             </ul>
+
             </div>,
             
                 document.getElementById("bachelor") // en div som heter root är typiskt react

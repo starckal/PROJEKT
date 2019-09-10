@@ -1,3 +1,8 @@
+html, body {
+  margin: 0 auto;
+  background-color: lightblue;
+}
+
 #divven {
     display: flex;
     flex-direction: column;
@@ -9,16 +14,27 @@
   ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
-   /* top:50%;
-    left:50%;
-    position:absolute; */
+    padding: 0;  
+    width: 100%;
+    display: inline-block;
+    font-size: 5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   
   li {
-    float: left;
+    display: inline-block;
+  }
+
+  li:first-child {
+    background-color: #267ea0;
+    border-radius: 10px;
+    margin-right: 1%;
+  }
+
+  li:last-child {
+    background-color: #7e0b0b;
+    border-radius: 10px;
+    margin-left: 1%;
   }
   
   li a {
@@ -29,6 +45,20 @@
     text-decoration: none;
   }
   
-  li a:hover {
-    background-color: #111111;
+  li:first-child a:hover {
+    background-color: #267ea0;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    transition:all 0.3s ease;
+    border-radius: 10px;
+  }
+
+  li:last-child a:hover {
+    background-color: #7e0b0b;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    transition:all 0.3s ease;
+    border-radius: 10px;
   }
