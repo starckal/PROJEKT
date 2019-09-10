@@ -1,3 +1,10 @@
-head {
-    font-size: 15px;
+ .menus {
+    padding: 15px;
+    text-align: center;
+}
+div {
+    width: 100px;
+    float: left;
+    height: 100px;
+    background: gray;
 }
