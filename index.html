@@ -5,78 +5,67 @@
     <script src="https://unpkg.com/react@16.9.0/umd/react.development.js" ></script>
     <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js" ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-<div style="text-align: center; top: 10%; left: 30%">
-    <div id=menu1 style="background: darkred; padding: 10px; float: left; border-radius: 15px; margin: 10px;">
-    <h3>Who</h3>
-    <select class=drop id=teacher>
-            <option value="Dan G">Dan G</option>
-            <option value="Richar W">Richar W</option>
-            <option value="Pekka B">Pekka B</option>
-            <option value="Robin W">Robin W</option>
-    </select>
-</div>
-<div id=menu2 style="background: darkred; padding: 10px; float: left; border-radius: 15px; margin: 10px;">
-    <h3>Where</h3>
-    <select class=drop id=courses>
-            <option value="Webbutveckling">Webbutveckling</option>
-            <option value="Matematisk programmering">Matematisk programmering</option>
-            <option value="Pre-Calculus">Pre-Calculus</option>
-            <option value="Webbtjänster och molnteknologi">Webbtjänster och molnteknologi</option>
-    </select>
-</div>
-<div id=menu3 style="background: darkred; padding: 8.5px; float: left; border-radius: 15px; margin: 10px;">
-    <h3>How much</h3>
-    <input type="text" name="hours" value="100">
-</div>
-<div id=menu3 style="background: darkred; padding: 10px; float: left; border-radius: 15px; margin: 10px;">
-    <h3>Period</h3>
-    <select class=drop id=howMuch>
-            <option value="P1">P1</option>
-            <option value="P2">P2</option>
-            <option value="P3">P3</option>
-            <option value="P4">P4</option>
-    </select>
-</div>
-<style>
-    .button {
-      background-color: darkred;
-      border: none;
-      border-radius: 15px;
-      color: black;
-      padding: 10px 22px; 
-      position: relative;
-      left: 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 40px 2px;
-      cursor: pointer;
-    }
-    </style>
-<button class="button">Submit</button>
+<div id="menuDiv">
+    
+    <div id="menu1">
+        <h3>Who</h3>
+        <select class=drop id=teacher>
+                <option value="Dan G">Dan G</option>
+                <option value="Richar W">Richar W</option>
+                <option value="Pekka B">Pekka B</option>
+                <option value="Robin W">Robin W</option>
+        </select>
+    </div>
+    <div id="menu2">
+        <h3>Where</h3>
+        <select class=drop id=courses>
+                <option value="Webbutveckling">Webbutveckling</option>
+                <option value="Matematisk programmering">Matematisk programmering</option>
+                <option value="Pre-Calculus">Pre-Calculus</option>
+                <option value="Webbtjänster och molnteknologi">Webbtjänster och molnteknologi</option>
+        </select>
+    </div>
+
+    <div id="menu3">
+        <h3>How much</h3>
+        <input type="text" name="hours" value="100">
+
+    </div>
+
+    <div id="menu4">
+        <h3>Period</h3>
+        <select class=drop id=howMuch>
+                <option value="P1">P1</option>
+                <option value="P2">P2</option>
+                <option value="P3">P3</option>
+                <option value="P4">P4</option>
+        </select>
+    </div>
+
+    <button class="button">Submit</button>
 
 </div>
 
-<textarea rows="4" cols="50" style="width: 400px; height: 200px; top: 30%; left: 26%;">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-        laborum."
-</textarea>
-<textarea rows="4" cols="50" style="width: 400px; height: 200px; top: 30%; left: 50%;">
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-        laborum."
-</textarea>
-
+<div id="textAreasDiv">
+    <textarea rows="4" cols="50" style="width: 400px; height: 200px;">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+            laborum."
+    </textarea>
+    <textarea rows="4" cols="50" style="width: 400px; height: 200px;">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+            laborum."
+    </textarea>
+</div>
 
 
     <script type="text/babel">
