@@ -46,39 +46,46 @@
         </select>
     </div>
 
-    <button class="button">Submit</button>
+    <button class="button">Submit!</button>
 
 </div>
 
 <div id="textAreasDiv">
-    <textarea rows="4" cols="50" style="width: 400px; height: 200px;">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-            laborum."
-    </textarea>
-    <textarea rows="4" cols="50" style="width: 400px; height: 200px;">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-            laborum."
-    </textarea>
+
+
+        <textarea class="text-areas" rows="4" cols="50" placeholder="Teachers">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+                laborum."
+        </textarea>
+
+    
+        <textarea class="text-areas" rows="4" cols="50">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+                laborum."
+        </textarea>
 </div>
 
+<div id="demo"></div>
+
+    <select>
+        <option value="Webbutveckling">Webbutveckling</option>
+        <option value="Matematisk programmering">Matematisk programmering</option>
+        <option value="Pre-Calculus">Pre-Calculus</option>
+        <option value="Webbtjänster och molnteknologi">Webbtjänster och molnteknologi</option>
+    </select>
 
     <script type="text/babel">
     function Welcome(props) {
         return <div><h1>Hi {props.name}</h1></div>;
     }
 
-    <select>
-  <option value="Webbutveckling">Webbutveckling</option>
-  <option value="Matematisk programmering">Matematisk programmering</option>
-  <option value="Pre-Calculus">Pre-Calculus</option>
-  <option value="Webbtjänster och molnteknologi">Webbtjänster och molnteknologi</option>
-    </select>
+    
 
     function App() {
         return (
@@ -89,11 +96,19 @@
 
         );
     }
+
+    function Choices(props) {
+        return (
+            <div id="menu1">{props.name}</div>
+        )
+    }
     ReactDOM.render(
-        <App/>,
+        <div>
+            <Choices name="jaha"/>
+        </div>,
         document.getElementById("demo")
-        
+    
     );
-</script>
+    </script>
 </body>
 </html>
