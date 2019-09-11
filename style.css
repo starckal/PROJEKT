@@ -33,6 +33,7 @@ html, body {
     border-radius: 15px;
     color: black;
     padding: 10px 22px; 
+    margin: 10px;
 }
 
 #menu2 {
@@ -42,6 +43,7 @@ html, body {
     border-radius: 15px;
     color: black;
     padding: 10px 22px; 
+    margin: 10px;
 }
 
 #menu3 {
@@ -51,6 +53,7 @@ html, body {
     border-radius: 15px;
     color: black;
     padding: 10px 22px; 
+    margin: 10px;
 }
 
 #menu4 {
@@ -60,6 +63,7 @@ html, body {
     border-radius: 15px;
     color: black;
     padding: 10px 22px; 
+    margin: 10px;
 }
 
 .button {
