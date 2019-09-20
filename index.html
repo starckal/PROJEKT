@@ -6,6 +6,7 @@
     <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js" ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
     <link rel="stylesheet" href="style.css">
+    <script src="testjs.js"></script>
 
 </head>
 <body>
@@ -53,7 +54,7 @@
 <div id="textAreasDiv">
 
 
-        <textarea class="text-areas" rows="4" cols="50" placeholder="Teachers">
+        <textarea id="kurser" class="text-areas" rows="4" cols="50" placeholder="Teachers">
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
                 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
@@ -62,7 +63,7 @@
         </textarea>
 
     
-        <textarea class="text-areas" rows="4" cols="50">
+        <textarea id="larare" class="text-areas" rows="4" cols="50">
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
                 commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
@@ -109,6 +110,11 @@
         document.getElementById("demo")
     
     );
+
+    </script>
+    <script>
+        document.getElementById("kurser").innerHTML = JSON.stringify(dataJSON);
+    document.getElementById("larare").innerHTML = JSON.stringify(dataJSON2);
     </script>
 </body>
 </html>
