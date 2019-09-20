@@ -408,6 +408,14 @@ var dataJSON = {
 }
 
 var programmen = dataJSON.Program;
-var lararna = dataJSON.Personal;
+var i;
+for(var i = 0; i < dataJSON.Personal.length; i++) {
+  var lararna ="<p>"+lararna + " " +
+dataJSON.Personal[i].Förnamn + " " + dataJSON.Personal[i].Efternamn+"</p>";
+
+
+}
+
+
 console.log(programmen);
 console.log(lararna);
