@@ -5,7 +5,9 @@
     <script src="https://unpkg.com/react@16.9.0/umd/react.development.js" ></script>
     <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js" ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="resursering.js"></script>
     <script src="testjs.js"></script>
 
 </head>
@@ -50,7 +52,16 @@
     <button class="button">Submit!</button>
 
 </div>
-
+<script>
+    $(document).ready(function(){
+      $("button").click(function(){     //SLIDE alla <p>, funkar int nu alls typ
+        $("#moro").slideToggle();
+      });
+    });
+    </script>
+    </head>
+    <body>
+    
 <div id="textAreasDiv">
 
 
@@ -69,7 +80,9 @@
                 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
                 laborum."
             </div>
+            
 </div>
+
 
 <div id="demo"></div>
 
@@ -112,8 +125,8 @@
 
     </script>
     <script>
-        document.getElementById("kurser").innerHTML = JSON.stringify(programmen);
-    document.getElementById("larare").innerHTML = JSON.stringify(lararna);
+   document.getElementById("larare").innerHTML = JSON.stringify(lararna);
+   document.getElementById("kurser").innerHTML = JSON.stringify(programmen); //sätter objekt till strängar och skriver ut dem
     </script>
 </body>
 </html>
