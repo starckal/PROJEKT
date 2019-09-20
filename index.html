@@ -49,15 +49,17 @@
         </select>
     </div>
 
-    <button class="button">Submit!</button>
+    <button class="submit-button">Submit!</button>
 
 </div>
-<script>
+<script>    
     $(document).ready(function(){
-      $("button").click(function(){     //SLIDE alla <p>, funkar int nu alls typ
-        $("#moro").slideToggle();
+      $(".slide-button").click(function(){     //SLIDE alla <p>, funkar int nu alls typ
+        $(this).parent().next('.moro').slideToggle();
+        console.log(this);
       });
     });
+
     </script>
     </head>
     <body>
@@ -83,7 +85,7 @@
             
 </div>
 
-
+    <!--
 <div id="demo"></div>
 
     <select>
@@ -92,7 +94,8 @@
         <option value="Pre-Calculus">Pre-Calculus</option>
         <option value="Webbtjänster och molnteknologi">Webbtjänster och molnteknologi</option>
     </select>
-
+    -->
+    
     <script type="text/babel">
     function Welcome(props) {
         return <div><h1>Hi {props.name}</h1></div>;
@@ -115,6 +118,7 @@
             <div id="menu1">{props.name}</div>
         )
     }
+    /*
     ReactDOM.render(
         <div>
             <Choices name="jaha"/>
@@ -122,7 +126,7 @@
         document.getElementById("demo")
     
     );
-
+        */
     </script>
     <script>
    document.getElementById("larare").innerHTML = JSON.stringify(lararna);

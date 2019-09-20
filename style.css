@@ -22,11 +22,16 @@ html, body {
 }
 
 .text-areas {
+    margin: 0 auto;
     width: 30%;
     height: 500px;
-    resize: inherit;
     overflow: auto;
-    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    display: inline-block;
+    
 }
 
 .drop {
@@ -91,7 +96,7 @@ html, body {
     margin: 10px;
 }
 
-.button {
+.submit-button {
     background-color: #7e0b0b;
     border: none;
     border-radius: 15px;
@@ -109,7 +114,7 @@ html, body {
     cursor: pointer;
   }
 
-  .button:hover {
+  .submit-button:hover {
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
@@ -117,6 +122,9 @@ html, body {
     border-radius: 10px;
   }
 
+.slide-button {
+    background-color: lightgoldenrodyellow;
+}
 
   #larare {
       border-style: solid;
@@ -124,8 +132,6 @@ html, body {
   }
   
   #kurser{
-      
-      position:absolute;
       border-style: solid;
       border-width: 2px;
   }
