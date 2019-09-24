@@ -9,6 +9,17 @@ dataJSON.Personal[i].Förnamn + " " + dataJSON.Personal[i].Efternamn+"</button><
 
 }
 
+for(var i = 0; i < programmen.IA.Kurser.length; i++) { // Skriver ut kurserna på likadant sätt som lärarna skrivs ut
 
-console.log(programmen);
-console.log(lararna);
+  var kurs = kurs + "<p><button class='slide-button'>" + programmen.IA.Kurser[i].namn +"</button><p class='moro'>"+ "Kurskod: " + programmen.IA.Kurser[i].kurskod + "<br>" 
+  + "Period: " + programmen.IA.Kurser[i].period + "<br>" + "Timmar: " +  programmen.IA.Kurser[i].timmar +"</p></p>";
+
+
+  //console.log(kurs); // miksi vitussa tämä on undefined saatana perkele | haha olet tyhäm kone ja vann dig
+  
+}
+
+ 
+
+
+
