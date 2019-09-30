@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="resursering.js"></script>
     <script src="testjs.js"></script>
+    <script src="personal.js"></script>
 
 </head>
 <body>
@@ -17,10 +18,7 @@
     <div id="menu1">
         <h3>Who</h3>
         <select class=drop id=teacher>
-                <option value="Dan G">Dan G</option>
-                <option value="Richar W">Richar W</option>
-                <option value="Pekka B">Pekka B</option>
-                <option value="Robin W">Robin W</option>
+
         </select>
     </div>
     <div id="menu2">
@@ -68,40 +66,25 @@
 
 
         <div id="larare" class="text-areas">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                laborum."
+                
         </div>
     
         <div id="kurser" class="text-areas">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
-                laborum."
-            </div>
+                
+        </div>
             
 </div>
 
-    <!--
+
 <div id="demo"></div>
 
-    <select>
-        <option value="Webbutveckling">Webbutveckling</option>
-        <option value="Matematisk programmering">Matematisk programmering</option>
-        <option value="Pre-Calculus">Pre-Calculus</option>
-        <option value="Webbtjänster och molnteknologi">Webbtjänster och molnteknologi</option>
-    </select>
-    -->
+   
+
     
     <script type="text/babel">
     function Welcome(props) {
         return <div><h1>Hi {props.name}</h1></div>;
     }
-
-    
 
     function App() {
         return (
@@ -118,15 +101,51 @@
             <div id="menu1">{props.name}</div>
         )
     }
-    /*
-    ReactDOM.render(
-        <div>
-            <Choices name="jaha"/>
-        </div>,
-        document.getElementById("demo")
+
+
+    function Menus(props) {
+        return (            
+        <div id={props.id}>
+            <h3>{props.title}</h3>
+                <select className="drop" id={props.selectId}>
+                       {props.options} 
+                </select> 
+        </div>
+        );
+    }
+
+
+    /*  Använde tillfälligt för att klura ut att sätta all personal i <option> in i <select>
+    function Personal(props) {
+        return (
+        <div className="personal">
+            <select>{props.namn}</select>
+        </div>
+        );
+    }
+    */
     
-    );
-        */
+    // Loopar genom all personal, skickar som en array (mappar()) till Menus
+    function loop() {  
+        var personal = [];
+        for (var i=0; i < jsonPersonal.Personal.length; i++) {
+            personal.push(<option key={i} value={i}>{jsonPersonal.Personal[i].Förnamn + " " + jsonPersonal.Personal[i].Efternamn}</option>);
+        }
+            console.log(personal)
+
+            var elements = [];
+            elements = personal.map(Menus);
+            console.log(elements);
+            return personal;
+    }
+
+    ReactDOM.render( 
+
+        <Menus id="menu1" title="Who" className="drop1" options={loop()} />, 
+        document.getElementById("menuDiv") 
+        );
+    
+        
     </script>
     <script>
    document.getElementById("larare").innerHTML = JSON.stringify(lararna);
