@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react@16.9.0/umd/react.development.js" ></script>
+    <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.development.js" ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.1/react-with-addons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="resursering.js"></script>
+    <script src="testjs.js"></script>
+
+</head>
+<body>
+<div id="menuDiv">
+    
+    <div id="menu1">
+        <h3>Who</h3>
+        <select class=drop id=teacher>
+                <option value="Dan G">Dan G</option>
+                <option value="Richar W">Richar W</option>
+                <option value="Pekka B">Pekka B</option>
+                <option value="Robin W">Robin W</option>
+        </select>
+    </div>
+    <div id="menu2">
+        <h3>Where</h3>
+        <select class=drop id=courses>
+                <option value="Webbutveckling">Webbutveckling</option>
+                <option value="Matematisk programmering">Matematisk programmering</option>
+                <option value="Pre-Calculus">Pre-Calculus</option>
+                <option value="Webbtjänster och molnteknologi">Webbtjänster och molnteknologi</option>
+        </select>
+    </div>
+
+    <div id="menu3">
+        <h3>How much</h3>
+        <input type="text" name="hours" value="100">
+
+    </div>
+
+    <div id="menu4">
+        <h3>Period</h3>
+        <select class=drop id=howMuch>
+                <option value="P1">P1</option>
+                <option value="P2">P2</option>
+                <option value="P3">P3</option>
+                <option value="P4">P4</option>
+        </select>
+    </div>
+
+    <button class="submit-button">Submit!</button>
+
+</div>
+
+<div id ="demo1"></div>
+
+
+<div id="textAreasDiv">
+
+
+    <div id="larare" class="text-areas">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+            laborum."
+    </div>
+
+    <div id="kurser" class="text-areas">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 
+            laborum."
+        </div>
+        
+</div>
+    <script type="text/babel">
+    function Welcome(props) {
+        return <div><h1>Hi {props.name}</h1></div>;
+    }
+
+    function App() {
+        return (
+            <div>
+            <Welcome name="Kukkumaija" />
+            <Welcome name="Dab" />
+            </div>
+
+        );
+    }
+    function Choices(props) {
+        return (
+            <div id="menu1">{props.name}</div>
+        )
+    }
+    </script>
+    <script type="text/babel">
+    function Kurs(props) {
+
+return (
+ <div className="kurs">
+<button>Kursnamn: {props.namn}</button>
+ <p>Kurskod: {props.kurskod}</p>
+ <p>period: {props.period}</p>
+ <p>timmar: {props.kurskod}</p>
+ </div> 
+);
+}
+       function loop(){
+        var kurser = []; 
+        for (var i=0; i < dataJSON.Program.IA.Kurser.length; i++){
+            kurser.push(dataJSON.Program.IA.Kurser[i]); 
+        }
+        var elements = []; 
+       elements = kurser.map(Kurs);
+       console.log(kurser);
+       console.log(elements);
+        return elements;
+       }
+      loop();
+         
+    const CSSTransitionGroup = React.addons.CSSTransitionGroup;
+    const TransitionGroup = React.addons.TransitionGroup;
+
+class Transition extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = { visible: false };
+        this.handleClick = this.handleClick.bind(this)
+    }
+    handleClick() {
+    this.setState({ visible: ! this.state.visible });
+}
+
+    render() {
+        return <div>
+            <button onClick={this.handleClick}>{this.state.visible ? 'Slide up' : 'Slide down'}</button>
+            <CSSTransitionGroup transitionName="example">
+                { this.state.visible ? <div className='panel'>{loop()}</div> : null }
+            </CSSTransitionGroup>
+        </div>
+    }
+}
+React.render(<Transition />, document.getElementById('kurser'));
+
+
+
+</script>
+</body>
+</html>
