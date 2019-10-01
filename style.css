@@ -27,12 +27,11 @@ html, body {
 .text-areas {
     
     width: 25%;
-    height: 300px;
+    height: 500px;;
     overflow: auto;
     text-align: center;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     display: inline-block;
     background-color: lightcyan;
     border-radius: 5px;
