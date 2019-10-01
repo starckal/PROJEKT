@@ -86,23 +86,6 @@
         return <div><h1>Hi {props.name}</h1></div>;
     }
 
-    function App() {
-        return (
-            <div>
-            <Welcome name="Kukkumaija" />
-            <Welcome name="Dab" />
-            </div>
-
-        );
-    }
-
-    function Choices(props) {
-        return (
-            <div id="menu1">{props.name}</div>
-        )
-    }
-
-
     function Menus(props) {
         return (            
         <div id={props.id}>
@@ -114,17 +97,27 @@
         );
     }
 
-
-    /*  Använde tillfälligt för att klura ut att sätta all personal i <option> in i <select>
-    function Personal(props) {
+    function Input(props) {
         return (
-        <div className="personal">
-            <select>{props.namn}</select>
+            <div id={props.id}>
+                <h3>{props.title}</h3>
+                <input type={props.type} placeholder="Hours..." name="hourInput" min={0} max={100} />
+            </div>
+        );
+    }
+
+    function Period(props) {
+        return (
+        <div id={props.id}>
+            <h3>{props.title}</h3>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
         </div>
         );
     }
-    */
-    
+
     // Loopar genom all personal, skickar som en array (mappar()) till Menus
     function loopPersonal() {  
         var personal = [];
@@ -153,7 +146,9 @@
     ReactDOM.render( 
         <>
         <Menus id="menu1" title="Who" className="drop1" options={loopPersonal()} />
-        <Menus id="menu2" title="Where" className="drop2" options={loopKurser()} /> 
+        <Menus id="menu2" title="Where" className="drop2" options={loopKurser()} />
+        <Input id="menu3" title="How Much" type="number" />
+        <Period id="menu4" title="Period" />
         </>,
         document.getElementById("menuDiv") 
         );
@@ -161,8 +156,8 @@
         
     </script>
     <script>
-   document.getElementById("larare").innerHTML = JSON.stringify(lararna);
-   document.getElementById("kurser").innerHTML = JSON.stringify(kurs); //sätter objekt till strängar och skriver ut dem
+   document.getElementById('larare').innerHTML = lararna;
+   document.getElementById('kurser').innerHTML = kurs; //sätter objekt till strängar och skriver ut dem
     </script>
 </body>
 </html>
