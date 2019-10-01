@@ -1,12 +1,14 @@
 html, body {
     margin: 0 auto;
+    background-color: lightblue;
 }
 
 #menuDiv {
     margin: 0 auto;
     width: 100%;
     text-align: center;
-    margin-top: 20px;
+    padding-top:20px;
+    background-color: lightskyblue;
 }
 
 #textAreasDiv {
@@ -19,11 +21,12 @@ html, body {
     text-align: center;
     min-height: 100vh;
     display: inline-block;
+    border-top:solid black 3px;
 }
 
 .text-areas {
     margin: 0 auto;
-    width: 30%;
+    width: 25%;
     height: 500px;
     overflow: auto;
     text-align: center;
@@ -31,6 +34,10 @@ html, body {
     justify-content: center;
     min-height: 100vh;
     display: inline-block;
+    background-color: lightcyan;
+    border-radius: 5px;
+    margin:10px;
+
     
 }
 
