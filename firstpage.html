@@ -8,24 +8,27 @@
         <link rel="stylesheet" href="styleFirstPage.css">
     </head>
     
+    
     <body>
         <div id="bachelor">Bachelor</div>
 
         <script type="text/babel">
-            function Bachelor(props){                //Komponenten welcome äter props och returnerar element
-                return <div ><a id="reactDiv" href={props.link}>BACHELOR</a></div>;
+
+            function Bachelor(props){
+                return <div onClick={() => {sessionStorage.picker=props.choice}} ><a id="reactDiv" href={props.link}>BACHELOR</a></div>;
             }
 
-            function Master (props){                //Komponenten welcome äter props och returnerar element
-                return <div ><a id="reactDiv" href={props.link}>MASTER</a></div>;
+            function Master (props){
+                return <div onClick={() => {sessionStorage.picker=props.choice}} ><a id="reactDiv" href={props.link}>MASTER</a></div>;
             }
+            //choice "master" eller "bachelor" saveas till sessionStorage.picker
 
-            ReactDOM.render(                    // ReactDOM är virtuell, render metoden skapar "riktiga" DOM
+            ReactDOM.render(
             <div id="divven">
 
             <ul>
-                <li> <Master link="index.html"/> </li>
-                <li> <Bachelor link="index.html"/></li>
+                <li> <Master link="index.html" choice="master"/> </li>
+                <li> <Bachelor link="index.html" choice="bachelor"/></li>
             </ul>
 
             </div>,
@@ -38,5 +41,8 @@
             
           
         </script>
+
     </body>
+    
+
 </html>
