@@ -126,22 +126,35 @@
     */
     
     // Loopar genom all personal, skickar som en array (mappar()) till Menus
-    function loop() {  
+    function loopPersonal() {  
         var personal = [];
         for (var i=0; i < jsonPersonal.Personal.length; i++) {
             personal.push(<option key={i} value={i}>{jsonPersonal.Personal[i].Förnamn + " " + jsonPersonal.Personal[i].Efternamn}</option>);
         }
-            console.log(personal)
-
             var elements = [];
             elements = personal.map(Menus);
-            console.log(elements);
             return personal;
     }
 
-    ReactDOM.render( 
+    function loopKurser() {  
+        var kurser = [];
+        var kurserJSON = dataJSON.Program.IA.Kurser;
+        for (var i=0; i < kurserJSON.length; i++) {
+            kurser.push(<option key={i} value={i}>{kurserJSON[i].namn}</option>);
+        }
+            console.log(kurser)
 
-        <Menus id="menu1" title="Who" className="drop1" options={loop()} />, 
+            var elements = [];
+            elements = kurser.map(Menus);
+            console.log(elements);
+            return kurser;
+    }
+
+    ReactDOM.render( 
+        <>
+        <Menus id="menu1" title="Who" className="drop1" options={loopPersonal()} />
+        <Menus id="menu2" title="Where" className="drop2" options={loopKurser()} /> 
+        </>,
         document.getElementById("menuDiv") 
         );
     
