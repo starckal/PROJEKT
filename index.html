@@ -118,6 +118,14 @@
         );
     }
 
+    function Submit(props) {
+        return(
+            <div id={props.id}>
+                <button class="submit-button">Submit!</button>
+            </div>
+        );
+    }
+
     // Loopar genom all personal, skickar som en array (mappar()) till Menus
     function loopPersonal() {  
         var personal = [];
@@ -149,6 +157,7 @@
         <Menus id="menu2" title="Where" className="drop2" options={loopKurser()} />
         <Input id="menu3" title="How Much" type="number" />
         <Period id="menu4" title="Period" />
+        <Submit id="menu-submit" />
         </>,
         document.getElementById("menuDiv") 
         );
