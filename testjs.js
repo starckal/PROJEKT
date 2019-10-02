@@ -2,7 +2,7 @@ var programmen = dataJSON.Program;
 var lararna = '';
 for(var i = 0; i < dataJSON.Personal.length; i++) {
     lararna = lararna + "<p><button class='slide-button'>" + " " +
-    dataJSON.Personal[i].Förnamn + " " + dataJSON.Personal[i].Efternamn+"</button><p class='moro' id='cont-"+ i +"' style='display:none'>Hit infon</p></p>";   //Loopar igenom alla förnamn och efternamn och
+    dataJSON.Personal[i].Förnamn + " " + dataJSON.Personal[i].Efternamn+"</button><p class='moro' id='cont-"+ i +"' style='display:none'></p></p>";   //Loopar igenom alla förnamn och efternamn och
                                                                                                                                   //sätter dem i en button
 }
 var kurs = '';
@@ -12,7 +12,7 @@ if(sessionStorage.picker == "master"){
 	  + "Period: " + programmen.BDA.Kurser[i].period + "<br>" + "Timmar: " +  programmen.BDA.Kurser[i].timmar + "</p></p>";
 
 
-	  //console.log(kurs); // miksi vitussa tämä on undefined saatana perkele | haha olet tyhäm kone ja vann dig
+
 
 	}
 	
