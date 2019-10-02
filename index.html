@@ -150,7 +150,7 @@
             } 
             console.log(period);
         }
-
+        var cont1h = 0;
         var MyTable = document.getElementById("entry-table");
         var NewRow = MyTable.insertRow(1); 
         var Newcell1 = NewRow.insertCell(0); 
@@ -162,7 +162,9 @@
         NewCell3.innerHTML = option3;
         NewCell4.innerHTML = period;
         if(option1 == "Dennis Biström"){
-        document.getElementById("cont-0").innerHTML += option2 + " " + Number(inputHours.value) +"h</br>";
+        document.getElementById("cont-0").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+        var cont1h = cont1h + parseInt(inputHours.value);
+        console.log(cont1h);
         }
         if(option1 == "Magnus Westerlund"){
         document.getElementById("cont-1").innerHTML += Number(inputHours.value);
