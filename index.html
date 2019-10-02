@@ -15,7 +15,6 @@
 </head>
 <body>
 <div id="menuDiv"></div>
-<div id="entryDiv"></div>
 <script>    
     $(document).ready(function(){
       $(".slide-button").click(function(){     //SLIDE alla <p>, funkar int nu alls typ | borde funka nu =-)
@@ -49,7 +48,7 @@
         return (            
         <div id={props.id}>
             <h3>{props.title}</h3>
-                <select className="drop" id={props.selectId}>
+                <select className="drop" id={props.selectId} onChange={props.selectFunc}>
                        {props.options} 
                 </select> 
         </div>
@@ -69,17 +68,37 @@
         return (
         <div id={props.id}>
             <h3>{props.title}</h3>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
+            <input type="checkbox" name="period1" value="1"/>P1
+            <input type="checkbox" name="period1" value="1"/>P2
+            <input type="checkbox" name="period1" value="1"/>P3
+            <input type="checkbox" name="period1" value="1"/>P4
         </div>
         );
     }
 
     function Submit(props) {
         return(
-            <button type="submit" className="submit-button">Add Entry</button>
+            <button type="submit" className="submit-button" onClick={entryOutput}>Add Entry</button>
+        );
+    }
+
+    function Entry(props) {
+        return(
+        <div id="entryDiv">
+            <table id="entry-table">
+                <thead>
+                    <tr>
+                        <th>WHO</th>
+                        <th>WHERE</th>
+                        <th>HOW MUCH</th>
+                        <th>PERIOD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {props.entries}
+                </tbody>
+            </table>
+        </div>
         );
     }
 
@@ -105,13 +124,32 @@
             return kurser;
     }
 
+    function entryOutput(larare, kurs) {
+        var larare = document.getElementById('select-larare');
+        var option1 = larare.options[larare.selectedIndex].text;
+
+        var kurs = document.getElementById('select-kurs');
+        var option2 = kurs.options[kurs.selectedIndex].text;
+
+        var MyTable = document.getElementById("entry-table");
+        var NewRow = MyTable.insertRow(1); 
+        var Newcell1 = NewRow.insertCell(0); 
+        var Newcell2 = NewRow.insertCell(1); 
+        Newcell1.innerHTML = option1; 
+        Newcell2.innerHTML = option2; 
+
+        console.log(option1);
+        console.log(option2);
+    }
+
     ReactDOM.render( 
         <>
-        <Menus id="menu1" title="Who" className="drop1" options={loopPersonal()} />
-        <Menus id="menu2" title="Where" className="drop2" options={loopKurser()} />
+        <Menus id="menu1" title="Who" className="drop1" selectId="select-larare" options={loopPersonal()} />
+        <Menus id="menu2" title="Where" className="drop2" selectId="select-kurs" options={loopKurser()} />
         <Input id="menu3" title="How Much" type="number" />
         <Period id="menu4" title="Period" />
         <Submit />
+        <Entry />
         </>,
         document.getElementById("menuDiv") 
         );

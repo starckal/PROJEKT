@@ -1,6 +1,7 @@
 html, body {
     margin: 0 auto;
-    background-color: lightblue;
+    background-color: lightcyan;
+    
 }
 
 #menuDiv {
@@ -25,7 +26,6 @@ html, body {
 }
 
 .text-areas {
-    
     width: 25%;
     height: 500px;;
     overflow: auto;
@@ -119,26 +119,51 @@ html, body {
     font-size: 16px;
     margin: 40px 2px;
     cursor: pointer;
-  }
+}
 
-  .submit-button:hover {
+.submit-button:hover {
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
     transition:all 0.3s ease;
     border-radius: 10px;
-  }
+}
 
 .slide-button {
-background-color: lightgoldenrodyellow;
+    background-color: lightgoldenrodyellow;
 }
 
   #larare {
-      border-style: solid;
-      border-width: 2px;
-  }
+    border-style: solid;
+    border-width: 2px;
+}
   
-  #kurser{
-      border-style: solid;
-      border-width: 2px;
-  }
+#kurser{
+    border-style: solid;
+    border-width: 2px;
+}
+
+th, td {
+    border: 2px solid black;
+    background-color: #267ea0;
+}
+
+#entryDiv {
+    margin: 0 auto;
+    background-color: lightskyblue;
+    height: 20%;
+}
+
+#entry-table {
+    margin: 0 auto;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 10px;
+    width: 60%;
+    
+    border: 1px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
