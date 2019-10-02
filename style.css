@@ -132,6 +132,7 @@ html, body {
 .slide-button {
     background-color: white;
     border-radius:7px;
+    padding:3px;
 }
 .slide-button:hover {
     background-color: lightgray;
