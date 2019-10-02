@@ -59,7 +59,7 @@
         return (
             <div id={props.id}>
                 <h3>{props.title}</h3>
-                <input type={props.type} placeholder="Hours..." name="hourInput" min={0} max={100} />
+                <input id={props.inputId} type={props.type} placeholder="Hours..." name="hourInput" min={0} max={100} />
             </div>
         );
     }
@@ -68,10 +68,10 @@
         return (
         <div id={props.id}>
             <h3>{props.title}</h3>
-            <input type="checkbox" name="period1" value="1"/>P1
-            <input type="checkbox" name="period1" value="1"/>P2
-            <input type="checkbox" name="period1" value="1"/>P3
-            <input type="checkbox" name="period1" value="1"/>P4
+            <input className="test" type="checkbox" name="period1" value="P1"/>P1
+            <input className="test" type="checkbox" name="period2" value="P2"/>P2
+            <input className="test" type="checkbox" name="period3" value="P3"/>P3
+            <input className="test" type="checkbox" name="period4" value="P4"/>P4
         </div>
         );
     }
@@ -131,12 +131,29 @@
         var kurs = document.getElementById('select-kurs');
         var option2 = kurs.options[kurs.selectedIndex].text;
 
+        var hours = document.getElementById('inputHours');
+        var option3 = inputHours.value.toString() + " Hours";
+
+        var period = document.querySelector('.test:checked').value;
+        var txt = '';
+        var i;
+        for (i=0; i < period.length; i++) {
+            if (period[i].checked) {
+                txt = txt + period[i].value;
+            } 
+            console.log(period);
+        }
+
         var MyTable = document.getElementById("entry-table");
         var NewRow = MyTable.insertRow(1); 
         var Newcell1 = NewRow.insertCell(0); 
-        var Newcell2 = NewRow.insertCell(1); 
+        var Newcell2 = NewRow.insertCell(1);
+        var NewCell3 = NewRow.insertCell(2); 
+        var NewCell4 = NewRow.insertCell(3);
         Newcell1.innerHTML = option1; 
         Newcell2.innerHTML = option2; 
+        NewCell3.innerHTML = option3;
+        NewCell4.innerHTML = period;
 
         console.log(option1);
         console.log(option2);
@@ -146,7 +163,7 @@
         <>
         <Menus id="menu1" title="Who" className="drop1" selectId="select-larare" options={loopPersonal()} />
         <Menus id="menu2" title="Where" className="drop2" selectId="select-kurs" options={loopKurser()} />
-        <Input id="menu3" title="How Much" type="number" />
+        <Input id="menu3" inputId="inputHours" title="How Much" type="number" />
         <Period id="menu4" title="Period" />
         <Submit />
         <Entry />
