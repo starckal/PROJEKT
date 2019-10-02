@@ -130,7 +130,7 @@ html, body {
 }
 
 .slide-button {
-    background-color: white;
+    background-color:lightgreen;
     border-radius:7px;
     padding:3px;
 }
@@ -173,4 +173,5 @@ th, td {
     padding: 20px;
     margin-bottom: 15px;
 }
+
 

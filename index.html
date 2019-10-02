@@ -130,7 +130,22 @@
             elements = kurser.map(Menus);
             return kurser;
     }
+    var cont0h = 0;
+    var cont1h = 0;
+    var cont2h = 0;
+    var cont3h = 0;
+    var cont4h = 0;
+    var cont5h = 0;
+    var cont6h = 0;
+    var cont7h = 0;
+    var cont8h = 0;
+    var cont9h = 0;
+    var cont10h = 0;
+    var cont11h = 0;
+    var cont12h = 0;
 
+
+    
     function entryOutput(larare, kurs) {
         var larare = document.getElementById('select-larare');
         var option1 = larare.options[larare.selectedIndex].text;
@@ -150,7 +165,7 @@
             } 
             console.log(period);
         }
-        var cont1h = 0;
+        
         var MyTable = document.getElementById("entry-table");
         var NewRow = MyTable.insertRow(1); 
         var Newcell1 = NewRow.insertCell(0); 
@@ -163,46 +178,166 @@
         NewCell4.innerHTML = period;
         if(option1 == "Dennis Biström"){
         document.getElementById("cont-0").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
-        var cont1h = cont1h + parseInt(inputHours.value);
-        console.log(cont1h);
+         cont0h = cont0h + parseInt(inputHours.value); 
+         if(cont0h > 800){
+            document.getElementsByClassName('slide-button')[0].style.backgroundColor = "yellow";
         }
-        if(option1 == "Magnus Westerlund"){
-        document.getElementById("cont-1").innerHTML += Number(inputHours.value);
+        if(cont0h > 1300){
+            document.getElementsByClassName('slide-button')[0].style.backgroundColor = "red";
         }
-        if(option1 == "Jonny Karlsson"){
-        document.getElementById("cont-2").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Dan Granqvist"){
-        document.getElementById("cont-3").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Richard Weber"){
-        document.getElementById("cont-4").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Pekka Butler"){
-        document.getElementById("cont-5").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Robin Wikström"){
-        document.getElementById("cont-6").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Kaj-Mikael Björk"){
-        document.getElementById("cont-7").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Joachim Enkvist"){
-        document.getElementById("cont-8").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Andrey Shcherbakov"){
-        document.getElementById("cont-9").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Leonardo Espinosa Leal"){
-        document.getElementById("cont-10").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Anton Akusok"){
-        document.getElementById("cont-11").innerHTML += Number(inputHours.value);
-        }
-        if(option1 == "Shuhua Liu"){
-        document.getElementById("cont-12").innerHTML += Number(inputHours.value);
         }
 
+
+        if(option1 == "Magnus Westerlund"){
+        document.getElementById("cont-1").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont1h = cont1h + parseInt(inputHours.value); 
+         if(cont1h > 800){
+            document.getElementsByClassName('slide-button')[1].style.backgroundColor = "yellow";
+        }
+        if(cont1h > 1300){
+            document.getElementsByClassName('slide-button')[1].style.backgroundColor = "red";
+        }
+        }
+
+        
+        if(option1 == "Jonny Karlsson"){
+        document.getElementById("cont-2").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont2h = cont2h + parseInt(inputHours.value); 
+         if(cont2h > 800){
+            document.getElementsByClassName('slide-button')[2].style.backgroundColor = "yellow";
+        }
+        if(cont2h > 1300){
+            document.getElementsByClassName('slide-button')[2].style.backgroundColor = "red";
+        }
+        }
+    
+    
+
+    
+        if(option1 == "Dan Granqvist"){
+        document.getElementById("cont-3").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont3h = cont3h + parseInt(inputHours.value); 
+         if(cont3h > 800){
+            document.getElementsByClassName('slide-button')[3].style.backgroundColor = "yellow";
+        }
+        if(cont3h > 1300){
+            document.getElementsByClassName('slide-button')[3].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Richard Weber"){
+        document.getElementById("cont-4").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont4h = cont4h + parseInt(inputHours.value); 
+         if(cont4h > 800){
+            document.getElementsByClassName('slide-button')[4].style.backgroundColor = "yellow";
+        }
+        if(cont4h > 1300){
+            document.getElementsByClassName('slide-button')[4].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Pekka Butler"){
+        document.getElementById("cont-5").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont5h = cont5h + parseInt(inputHours.value); 
+         if(cont5h > 800){
+            document.getElementsByClassName('slide-button')[5].style.backgroundColor = "yellow";
+        }
+        if(cont5h > 1300){
+            document.getElementsByClassName('slide-button')[5].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Robin Wikström"){
+        document.getElementById("cont-6").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont6h = cont6h + parseInt(inputHours.value); 
+         if(cont6h > 800){
+            document.getElementsByClassName('slide-button')[6].style.backgroundColor = "yellow";
+        }
+        if(cont6h > 1300){
+            document.getElementsByClassName('slide-button')[6].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Kaj-Mikael Björk"){
+        document.getElementById("cont-7").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont7h = cont7h + parseInt(inputHours.value); 
+         if(cont7h > 800){
+            document.getElementsByClassName('slide-button')[7].style.backgroundColor = "yellow";
+        }
+        if(cont7h > 1300){
+            document.getElementsByClassName('slide-button')[7].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Joachim Enkvist"){
+        document.getElementById("cont-8").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont8h = cont8h + parseInt(inputHours.value); 
+         if(cont8h > 800){
+            document.getElementsByClassName('slide-button')[8].style.backgroundColor = "yellow";
+        }
+        if(cont8h > 1300){
+            document.getElementsByClassName('slide-button')[8].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Andrey Shcherbakov"){
+        document.getElementById("cont-9").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont9h = cont9h + parseInt(inputHours.value); 
+         if(cont9h > 800){
+            document.getElementsByClassName('slide-button')[9].style.backgroundColor = "yellow";
+        }
+        if(cont9h > 1300){
+            document.getElementsByClassName('slide-button')[9].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Leonardo Espinosa Leal"){
+        document.getElementById("cont-10").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont10h = cont10h + parseInt(inputHours.value); 
+         if(cont10h > 800){
+            document.getElementsByClassName('slide-button')[10].style.backgroundColor = "yellow";
+        }
+        if(cont10h > 1300){
+            document.getElementsByClassName('slide-button')[10].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Anton Akusok"){
+        document.getElementById("cont-11").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont11h = cont11h + parseInt(inputHours.value); 
+         if(cont11h > 800){
+            document.getElementsByClassName('slide-button')[11].style.backgroundColor = "yellow";
+        }
+        if(cont11h > 1300){
+            document.getElementsByClassName('slide-button')[11].style.backgroundColor = "red";
+        }
+        }
+    
+    
+        if(option1 == "Shuhua Liu"){
+        document.getElementById("cont-12").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
+         cont12h = cont12h + parseInt(inputHours.value); 
+         if(cont12h > 800){
+            document.getElementsByClassName('slide-button')[12].style.backgroundColor = "yellow";
+        }
+        if(cont12h > 1300){
+            document.getElementsByClassName('slide-button')[12].style.backgroundColor = "red";
+        }
+        }
+    
+    
+    
+    
+        
+     
         console.log(option1);
         console.log(option2);
     }
