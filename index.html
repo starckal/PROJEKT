@@ -15,6 +15,13 @@
 </head>
 <body>
 <div id="menuDiv"></div>
+    <script type="text/javascript"> 
+    document.onload = mytime=setTimeout('remind(30)',1800000)
+    function remind(msg1) { 
+    var msg = "Du har varit på denna sida i " + msg1 +" minuter";
+    alert(msg); 
+    }
+    </script>
 <script>    
     $(document).ready(function(){
       $(".slide-button").click(function(){     //SLIDE alla <p>, funkar int nu alls typ | borde funka nu =-)
@@ -22,8 +29,8 @@
         console.log(this);
       });
     });
-
     </script>
+
 
     
 <div id="textAreasDiv">
