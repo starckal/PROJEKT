@@ -154,7 +154,7 @@
         var option2 = kurs.options[kurs.selectedIndex].text;
 
         var hours = document.getElementById('inputHours');
-        var option3 = inputHours.value.toString() + " Hours";
+        var option3 = inputHours.value.toString();
 
         var period = document.querySelector('.test:checked').value;
         var txt = '';
@@ -163,19 +163,23 @@
             if (period[i].checked) {
                 txt = txt + period[i].value;
             } 
-            console.log(period);
         }
         
-        var MyTable = document.getElementById("entry-table");
-        var NewRow = MyTable.insertRow(1); 
-        var Newcell1 = NewRow.insertCell(0); 
-        var Newcell2 = NewRow.insertCell(1);
-        var NewCell3 = NewRow.insertCell(2); 
-        var NewCell4 = NewRow.insertCell(3);
-        Newcell1.innerHTML = option1; 
-        Newcell2.innerHTML = option2; 
-        NewCell3.innerHTML = option3;
-        NewCell4.innerHTML = period;
+        if((inputHours.value == "") || (inputHours.value == "0")) {
+            alert("Sätt in timmar");
+        } else {
+            var MyTable = document.getElementById("entry-table");
+            var NewRow = MyTable.insertRow(1); 
+            var Newcell1 = NewRow.insertCell(0); 
+            var Newcell2 = NewRow.insertCell(1);
+            var NewCell3 = NewRow.insertCell(2); 
+            var NewCell4 = NewRow.insertCell(3);
+            Newcell1.innerHTML = option1; 
+            Newcell2.innerHTML = option2; 
+            NewCell3.innerHTML = option3 + "h";
+            NewCell4.innerHTML = period;
+        }
+
         if(option1 == "Dennis Biström"){
         document.getElementById("cont-0").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
          cont0h = cont0h + parseInt(inputHours.value); 
@@ -333,13 +337,6 @@
         }
         }
     
-    
-    
-    
-        
-     
-        console.log(option1);
-        console.log(option2);
     }
 
     ReactDOM.render( 
