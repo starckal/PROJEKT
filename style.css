@@ -108,7 +108,7 @@ html, body {
     border: solid black 2px;
     border-radius: 15px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
+    color: black;
     font-weight: bold;
     padding: 10px 22px; 
     position: relative;
@@ -168,10 +168,12 @@ th, td {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 10px;
     width: 60%;
-    
     border: 1px;
     padding: 20px;
     margin-bottom: 15px;
 }
 
-
+.mystyle {
+    background-color: white;
+    color: black;
+}
