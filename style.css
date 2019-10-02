@@ -130,7 +130,13 @@ html, body {
 }
 
 .slide-button {
-    background-color: lightgoldenrodyellow;
+    background-color: white;
+    border-radius:7px;
+}
+.slide-button:hover {
+    background-color: lightgray;
+    border-radius:7px;
+    transform: scale(1.1);
 }
 
   #larare {
