@@ -12,7 +12,7 @@ if(sessionStorage.picker == "master"){
 	  + "Period: " + programmen.BDA.Kurser[i].period + "<br>" + "Timmar: " +  programmen.BDA.Kurser[i].timmar + "</p></p>";
 
 
-	  //console.log(kurs); // miksi vitussa tämä on undefined saatana perkele | haha olet tyhäm kone ja vann dig
+
 
 	}
 	
