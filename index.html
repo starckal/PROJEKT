@@ -85,11 +85,11 @@
 
     function Submit(props) {
         return(
-            <button type="submit" className="submit-button" onClick={entryOutput}>Add Entry</button>
+            <button type="submit" className="submit-button" onClick={props.function}>Add Entry</button>
         );
     }
 
-    function Entry(props) {
+    function Table(props) {
         return(
         <div id="entryDiv">
             <table id="entry-table">
@@ -101,7 +101,7 @@
                         <th>PERIOD</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="entry-body">
                     {props.entries}
                 </tbody>
             </table>
@@ -131,7 +131,7 @@
             return kurser;
     }
 
-    function entryOutput(larare, kurs) {
+    function entryOutput() {
         var larare = document.getElementById('select-larare');
         var option1 = larare.options[larare.selectedIndex].text;
 
@@ -139,31 +139,34 @@
         var option2 = kurs.options[kurs.selectedIndex].text;
 
         var hours = document.getElementById('inputHours');
-        var option3 = inputHours.value.toString() + " Hours";
+        var option3 = inputHours.value.toString() + "h";
 
         var period = document.querySelector('.test:checked').value;
         var txt = '';
         var i;
         for (i=0; i < period.length; i++) {
             if (period[i].checked) {
-                txt = txt + period[i].value;
+                txt += period[i].value;
             } 
-            console.log(period);
         }
 
-        var MyTable = document.getElementById("entry-table");
-        var NewRow = MyTable.insertRow(1); 
-        var Newcell1 = NewRow.insertCell(0); 
-        var Newcell2 = NewRow.insertCell(1);
-        var NewCell3 = NewRow.insertCell(2); 
-        var NewCell4 = NewRow.insertCell(3);
-        Newcell1.innerHTML = option1; 
-        Newcell2.innerHTML = option2; 
-        NewCell3.innerHTML = option3;
-        NewCell4.innerHTML = period;
+        // Skapar nya celler i tabellen för entries
+            var MyTable = document.getElementById("entry-table");
+            var NewRow = MyTable.insertRow(1);
+            var NewCell1 = NewRow.insertCell(0); 
+            var NewCell2 = NewRow.insertCell(1);
+            var NewCell3 = NewRow.insertCell(2); 
+            var NewCell4 = NewRow.insertCell(3);
 
-        console.log(option1);
-        console.log(option2);
+            NewCell1.innerHTML = option1; 
+            NewCell2.innerHTML = option2; 
+            NewCell3.innerHTML = option3;
+            NewCell4.innerHTML = period;
+            
+            NewCell1.className = "mystyle";
+            NewCell2.className = "mystyle";
+            NewCell3.className = "mystyle";
+            NewCell4.className = "mystyle";
     }
 
     ReactDOM.render( 
@@ -172,8 +175,8 @@
         <Menus id="menu2" title="Where" className="drop2" selectId="select-kurs" options={loopKurser()} />
         <Input id="menu3" inputId="inputHours" title="How Much" type="number" />
         <Period id="menu4" title="Period" />
-        <Submit />
-        <Entry />
+        <Submit function={entryOutput} />
+        <Table />
         </>,
         document.getElementById("menuDiv") 
         );
