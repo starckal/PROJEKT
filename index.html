@@ -170,15 +170,20 @@
         } else {
             var MyTable = document.getElementById("entry-table");
             var NewRow = MyTable.insertRow(1); 
-            var Newcell1 = NewRow.insertCell(0); 
-            var Newcell2 = NewRow.insertCell(1);
+            var NewCell1 = NewRow.insertCell(0); 
+            var NewCell2 = NewRow.insertCell(1);
             var NewCell3 = NewRow.insertCell(2); 
             var NewCell4 = NewRow.insertCell(3);
-            Newcell1.innerHTML = option1; 
-            Newcell2.innerHTML = option2; 
+            NewCell1.innerHTML = option1; 
+            NewCell2.innerHTML = option2; 
             NewCell3.innerHTML = option3 + "h";
             NewCell4.innerHTML = period;
+
+            NewCell1.classList = "new-entry", NewCell2.classList = "new-entry", NewCell3.classList = "new-entry", NewCell4.classList = "new-entry";
         }
+        if((inputHours.value == "") || (inputHours.value == "0")) {
+            return false;
+        } else {
 
         if(option1 == "Dennis Biström"){
         document.getElementById("cont-0").innerHTML += option2 + " " + parseInt(inputHours.value) +"h</br>";
@@ -337,6 +342,7 @@
         }
         }
     
+    }
     }
 
     ReactDOM.render( 
